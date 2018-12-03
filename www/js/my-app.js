@@ -709,6 +709,7 @@ function scan()
 				
 				$$('.idvideo').html(text);
 				
+				alert(result.text);
       },
       function (error) {
           alert("Scanning failed: " + error);
