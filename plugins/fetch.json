@@ -40,5 +40,21 @@
         "variables": {
             "SENDER_ID": "4549769331"
         }
+    },
+    "cordova-plugin-barcodescanner": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-barcodescanner@0.7.4"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }
