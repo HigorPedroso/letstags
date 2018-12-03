@@ -29,5 +29,5 @@
     <preference name="DisallowOverscroll" value="true" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-	<plugin name="com.phonegap.plugins.barcodescanner" spec="2.0.0" source="pgb" />
+	<gap:plugin name="com.phonegap.plugins.barcodescanner" source="npm" />
 </widget>
