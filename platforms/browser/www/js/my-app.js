@@ -1,5 +1,5 @@
 // Initialize app
-var myApp = new Framework7();
+var myApp = new Framework7({pushState: true,});
 
 
 
@@ -23,7 +23,7 @@ function onDeviceReady() {
 }
 
 function onBackKeyDown() {
-		mainView.router.back();
+		alert('123');
     }		
 
 // Now we need to run the code that will be executed only for About page.
