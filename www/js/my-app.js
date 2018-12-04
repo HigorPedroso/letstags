@@ -1,5 +1,5 @@
 // Initialize app
-var myApp = new Framework7({pushState: true,});
+var myApp = new Framework7();
 
 
 
@@ -18,13 +18,10 @@ $$(document).on('deviceready', function() {
 		
 });
         
-function onDeviceReady() {
-    document.addEventListener('backbutton', onBackKeyDown, false);
-}
-
-function onBackKeyDown() {
-		alert('123');
-    }		
+document.addEventListener('backbutton', function (e) {
+  e.preventDefault();
+  return false;
+});	
 
 // Now we need to run the code that will be executed only for About page.
 
