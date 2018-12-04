@@ -15,9 +15,16 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-
+		
 });
-            
+        
+function onDeviceReady() {
+    document.addEventListener('backbutton', onBackKeyDown, false);
+}
+
+function onBackKeyDown() {
+		mainView.router.back();
+    }		
 
 // Now we need to run the code that will be executed only for About page.
 
@@ -693,11 +700,12 @@ $$(document).on('pageInit', '.page[data-page="chat"]', function (e) {
 
 function scan()
 {
-	 myApp.showPreloader('Carregando');
 	 
       cordova.plugins.barcodeScanner.scan(
-	   
+	  
+
       function (result) {
+		 myApp.showPreloader('Carregando');
 		 myApp.hidePreloader('Carregando');
 		
 		$$('.verificacodigo').html(result.text);
@@ -715,7 +723,7 @@ function scan()
 				
       },
       function (error) {
-          alert("Scanning failed: " + error);
+          alert("Falha: " + error);
       },
       {
 		  
