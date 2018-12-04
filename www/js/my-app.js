@@ -399,7 +399,7 @@ $$(document).on('pageInit', function (e) {
 		
 		
 	   $$.each(data,function(i, data){
-	    item += '<li class="swipeout remover' + data.id + '"><div class="swipeout-content item-content" onClick="playerTree(' + data.id + ')"><div class="item-media"><img src="https://img.youtube.com/vi/' + data.codigo + '/0.jpg" width="44"></div><div class="item-inner">' + data.titulo + '<div class="item-after"><span class="button active">Assistir</span></div></div></div><div class="swipeout-actions-left"><a onClick="removerFavorito(' + data.id + ')" class="action1 bg-pink swipeout-delete">Remover</a><a href="#" class="action2 bg-lightblue">Compartilhar</a></div><div class="swipeout-actions-right"><a href="#" class="action2 bg-lightblue">Compartilhar</a><a href="#" class="action1 bg-pink">Remover</a></div></li><p style="display:none" class="codigoVideo' + data.id + '">' + data.codigo + '</p> ';
+	    item += '<li class="swipeout remover' + data.id + '"><div class="swipeout-content item-content" onClick="playerTree(' + data.id + ')"><div class="item-media"><img src="https://img.youtube.com/vi/' + data.codigo + '/0.jpg" width="44"></div><div class="item-inner">' + data.titulo + '<div class="item-after"><span class="button active">Assistir</span></div></div></div><div class="swipeout-actions-left"><a onClick="removerFavorito(' + data.id + ')" class="action1 bg-pink swipeout-delete">Remover</a><a href="#" class="action2 bg-lightblue">Compartilhar</a></div><div class="swipeout-actions-right"><a href="#" class="action2 bg-lightblue">Compartilhar</a><a onClick="removerFavorito(' + data.id + ')" class="action1 bg-pink">Remover</a></div></li><p style="display:none" class="codigoVideo' + data.id + '">' + data.codigo + '</p> ';
                 });
 	  $$(".favoritos").html(item);
 		}else{
@@ -709,7 +709,6 @@ function scan()
 				
 				$$('.idvideo').html(text);
 				
-				alert(result.text);
       },
       function (error) {
           alert("Scanning failed: " + error);
