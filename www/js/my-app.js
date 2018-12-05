@@ -15,7 +15,7 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-		
+		setupPush();
 });
         
 document.addEventListener('backbutton', function (e) {
@@ -23,21 +23,33 @@ document.addEventListener('backbutton', function (e) {
   return false;
 });	
 
- document.addEventListener("deviceready",onDeviceReady,false);
-                function onDeviceReady() {
-                     var push = PushNotification.init({ "android": {"senderID": "644677798778"}});
-                     push.on('registration', function(data) {
-                     alert(data.registrationId);
-                     });
-          
-                     push.on('notification', function(data) {
-                     alert(data.title+" Message: " +data.message);
-                     });
-          
-                     push.on('error', function(e) {
-                     alert(e);
-                     });
-                }
+ function setupPush() {
+   var push = PushNotification.init({
+       "android": {
+           "senderID": "644677798778"
+       },
+       "ios": {
+         "sound": true,
+         "alert": true,
+         "badge": true
+       },
+       "windows": {}
+   });
+
+   push.on('registration', function(data) {
+       console.log("registration event: " + data.registrationId);
+       var oldRegId = localStorage.getItem('registrationId');
+       if (oldRegId !== data.registrationId) {
+           // Save new registration ID
+           localStorage.setItem('registrationId', data.registrationId);
+           // Post registrationId to your app server as the value has changed
+       }
+   });
+
+   push.on('error', function(e) {
+       console.log("push error = " + e.message);
+   });
+ }
 
 // Now we need to run the code that will be executed only for About page.
 
