@@ -15,13 +15,14 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-		setupPush();
 });
         
 document.addEventListener('backbutton', function (e) {
   e.preventDefault();
   return false;
 });	
+
+setupPush();
 
  function setupPush() {
    var push = PushNotification.init({

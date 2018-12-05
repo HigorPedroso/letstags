@@ -25,6 +25,9 @@
         },
         "cordova-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.phonegap.letstags"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.phonegap.letstags"
         }
     },
     "dependent_plugins": {
