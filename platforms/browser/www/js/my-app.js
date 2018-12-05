@@ -23,6 +23,22 @@ document.addEventListener('backbutton', function (e) {
   return false;
 });	
 
+ document.addEventListener("deviceready",onDeviceReady,false);
+                function onDeviceReady() {
+                     var push = PushNotification.init({ "android": {"senderID": "644677798778"}});
+                     push.on('registration', function(data) {
+                     alert(data.registrationId);
+                     });
+          
+                     push.on('notification', function(data) {
+                     alert(data.title+" Message: " +data.message);
+                     });
+          
+                     push.on('error', function(e) {
+                     alert(e);
+                     });
+                }
+
 // Now we need to run the code that will be executed only for About page.
 
 myApp.onPageInit('login-screen', function (page) {
