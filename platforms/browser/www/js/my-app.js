@@ -50,6 +50,7 @@ setupPush();
 
    push.on('error', function(e) {
        console.log("push error = " + e.message);
+       alert("push error = " + e.message);
    });
  }
 
