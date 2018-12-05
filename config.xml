@@ -34,5 +34,5 @@
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
 	<plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
 	<plugin name="cordova-plugin-firebase" spec="0.1.25" />
-	<plugin name="cordova-plugin-barcodescanner" spec="0.7.4" />
+	<gap:plugin name="cordova-plugin-barcode-scanner2" source="npm" />
 </widget>
