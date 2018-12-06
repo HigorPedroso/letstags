@@ -1725,3 +1725,35 @@ function chat(id){
 	
 	mainView.router.loadPage('chat.html');
 }
+
+
+function post() {
+
+	var idnotification = window.localStorage.getItem("registrationId");
+
+		
+		$$.ajax({
+		url : 'https://fcm.googleapis.com/fcm/send',
+		type : 'post',
+		 headers : {
+                Authorization : 'key=' + 'AIzaSyCQmA6XiSj3-kEZy6iWbsKa7IF3xcmMIWA'
+            },
+		data : {
+              "to": idnotification,
+              "data": {
+                "message": "This is push for video!"
+               }
+            },
+		dataType: 'html',
+		beforeSend: function(){
+			
+    },
+    timeout: 3000,    
+    success: function(retorno){
+		alert(retorno);
+    },
+    error: function(erro){
+     
+    }       
+  });
+}

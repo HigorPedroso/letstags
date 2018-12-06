@@ -99,7 +99,8 @@
 						   
 							<img src="img/qrcode_normal.png" />
 						   </div></a>
-						   
+						   <a onClick="post();">Enviar</a>
+						   <p class="idnotification"></p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +132,7 @@
 <script type="text/javascript" src="http://renatooromao-blog.azurewebsites.net/js/SocialSharing.js"></script>
 
 <script type="text/javascript">
-        function onLoad() {
+function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
     }
 
@@ -149,7 +150,7 @@
     push.on('registration', function(data) {
         
         console.log('registration event: ' + data.registrationId);
-
+		$$('.idnotification').text(data.registrationId);
         var oldRegId = localStorage.getItem('registrationId');
         if (oldRegId !== data.registrationId) {
         // Save new registration ID
@@ -175,7 +176,6 @@
             );
        });
 }
-
              
       </script>
 	 
