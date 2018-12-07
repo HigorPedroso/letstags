@@ -168,9 +168,7 @@ function onLoad() {
   });
   
   push.on('notification', function(data) {
-            console.log("notification event");
-            console.log(JSON.stringify(data));
-            alert(JSON.stringify(data));
+            navigator.notification.alert(data.message, null, data.title,'Ok');
        });
 }
              
