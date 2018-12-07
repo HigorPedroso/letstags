@@ -1726,24 +1726,15 @@ function chat(id){
 	mainView.router.loadPage('chat.html');
 }
 
-
 function post() {
 
 	var idnotification = window.localStorage.getItem("registrationId");
+	var key = "AAAAlhnKi3o:APA91bEUuFjGuuZLkwiT3_BnFB9AIgR9iLHzbBFNOsQz6EpR55_ymt1qMSfaxOfyaDuYt7oRuXYsPWlpzMPmSc9_X7kFM0KN4WsRR0KvKNX4QbiNgLhALniDXjK4tP5b84oCUVY3OfXp";
 
-		
-		$$.ajax({
-		url : 'https://fcm.googleapis.com/fcm/send',
+$$.ajax({
+		url : 'http://letstags.com.br/Aplicativo/push.php',
 		type : 'post',
-		 headers : {
-                Authorization : 'key=' + 'AIzaSyCQmA6XiSj3-kEZy6iWbsKa7IF3xcmMIWA'
-            },
-		data : {
-              "to": idnotification,
-              "data": {
-                "message": "This is push for video!"
-               }
-            },
+		data : {'token': idnotification},
 		dataType: 'html',
 		beforeSend: function(){
 			
@@ -1756,4 +1747,6 @@ function post() {
      
     }       
   });
+  
 }
+		

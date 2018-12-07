@@ -10,7 +10,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline';img-src * 'self' data: https:; media-src *; connect-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://ajax.googleapis.com https://www.youtube.com https://s.ytimg.com/yts/jsbin/www-widgetapi-vfl8_u944/www-widgetapi.js http://renatooromao-blog.azurewebsites.net https://cdn.firebase.com https://lets-tags.firebaseio.com https://s-usc1c-nss-216.firebaseio.com/ https://s-usc1c-nss-215.firebaseio.com http://letstags.com; frame-src *;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline';img-src * 'self' data: https:; media-src *; connect-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://ajax.googleapis.com https://www.youtube.com https://s.ytimg.com/yts/jsbin/www-widgetapi-vfl8_u944/www-widgetapi.js http://renatooromao-blog.azurewebsites.net https://cdn.firebase.com https://lets-tags.firebaseio.com https://s-usc1c-nss-216.firebaseio.com/ https://s-usc1c-nss-215.firebaseio.com http://letstags.com https://www.gstatic.com; frame-src *;">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -131,6 +131,7 @@
     <script type="text/javascript" src="js/my-app.js"></script>
 <script type="text/javascript" src="http://renatooromao-blog.azurewebsites.net/js/SocialSharing.js"></script>
 
+
 <script type="text/javascript">
 function onLoad() {
         document.addEventListener("deviceready", onDeviceReady, false);
@@ -177,6 +178,7 @@ function onLoad() {
        });
 }
              
+			 	 
       </script>
 	 
 </body>
