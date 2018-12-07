@@ -168,8 +168,9 @@ function onLoad() {
   });
   
   push.on('notification', function(data) {
-            console.log('notification event');
-            alert("Title:" + data.title);
+            console.log("notification event");
+            console.log(JSON.stringify(data));
+            alert(JSON.stringify(data));
        });
 }
              
