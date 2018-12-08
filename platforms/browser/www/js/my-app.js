@@ -35,10 +35,11 @@ myApp.onPageInit('login-screen', function (page) {
     // Handle username and password
     //myApp.alert('Username: ' + username + ', Password: ' + password, function () {
       //
+	  var token = window.localStorage.getItem("registrationId");
 	  $$.ajax({
     url : 'http://letstags.com.br/Aplicativo/login.php',
     type : 'post',
-    data : {'email': username, 'senha': password},
+    data : {'email': username, 'senha': password, 'token': token},
     dataType: 'html',
     beforeSend: function(){
       myApp.showPreloader('Carregando');
@@ -46,6 +47,7 @@ myApp.onPageInit('login-screen', function (page) {
     timeout: 3000,    
     success: function(retorno){
 		myApp.hidePreloader();
+		alert(retorno);
 	  if(retorno != " "){
 		 var data = JSON.parse(retorno);  
 	 
@@ -490,7 +492,7 @@ login();
 		
 		
 	   $$.each(data,function(i, data){
-	    item += ' <li class="item-content" onClick="chat(' + data.idUser + ')"><div class="item-inner"><div class="item-title name nameConversa' + data.idUser + '">' + data.nome + '</div><div class="item-after"><span class="button active">Enviar</span></div></div></li>';
+	    item += ' <li class="item-content" onClick="chat(' + data.idUser + ')"><div class="item-inner"><div class="item-title name nameConversa' + data.idUser + '">' + data.nome + '</div><div class="item-after"><span class="button active">Enviar</span></div></div><p style="display:none" class="tokencontato' + data.idUser + '">' + data.token + '</p></li>';
                 });
 	  $$(".contatos").html(item);
 		}else{
@@ -585,6 +587,7 @@ var conversationStarted = false;
 
 var idUser = window.localStorage.getItem("loggedIn");
 var idReceive = $('.idReceive').text();	  
+var token = $('.tokencontato').text();	  
 
 var APP = new Firebase('https://lets-tags.firebaseio.com/mensagens/');  
  
@@ -673,6 +676,7 @@ $$('.messagebar .link').on('click', function () {
   // Message text
   // Exit if empy message
   var messageText = myMessagebar.value().trim();
+  sendNotification(messageText, token, idUser);
    APP.push({mensagem: messageText, sender: idUser, receive:  idReceive});
   // Empty messagebar
   myMessagebar.clear()
@@ -1721,27 +1725,27 @@ function cadastrar(){
 function chat(id){
 	$$('.idReceive').text(id);
 	var conversa = $$('.nameConversa' + id).text();
+	var tokencontato = $$('.tokencontato' + id).text();
 	$$('.chatConversa').text(conversa);
+	$$('.tokencontato').text(tokencontato);
 	
 	mainView.router.loadPage('chat.html');
+	
 }
 
-function post() {
-
-	var idnotification = window.localStorage.getItem("registrationId");
-	var key = "AAAAlhnKi3o:APA91bEUuFjGuuZLkwiT3_BnFB9AIgR9iLHzbBFNOsQz6EpR55_ymt1qMSfaxOfyaDuYt7oRuXYsPWlpzMPmSc9_X7kFM0KN4WsRR0KvKNX4QbiNgLhALniDXjK4tP5b84oCUVY3OfXp";
+function sendNotification(message, token, idUser) {
 
 $$.ajax({
 		url : 'http://letstags.com.br/Aplicativo/push.php',
 		type : 'post',
-		data : {'token': idnotification},
+		data : {'token': token, 'message': message, 'idUser': idUser},
 		dataType: 'html',
 		beforeSend: function(){
 			
     },
     timeout: 3000,    
     success: function(retorno){
-		alert(retorno);
+		
     },
     error: function(erro){
      
