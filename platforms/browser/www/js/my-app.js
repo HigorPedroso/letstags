@@ -47,7 +47,7 @@ myApp.onPageInit('login-screen', function (page) {
     timeout: 3000,    
     success: function(retorno){
 		myApp.hidePreloader();
-		alert(retorno);
+		
 	  if(retorno != " "){
 		 var data = JSON.parse(retorno);  
 	 
@@ -56,7 +56,7 @@ myApp.onPageInit('login-screen', function (page) {
 		window.localStorage.setItem("loggedIn", id);
 		window.localStorage.setItem("username", data.nome);
 		});
-		mainView.router.back();
+		mainView.router.loadPage('index.html');
 	  }else{
 		  myApp.alert('Dados de usuário inválidos!', 'Ops');
 	  }
@@ -515,73 +515,6 @@ login();
 	if (page.name === 'chat') {
 		var conversa = $$('.chatConversa').text();
 		$$('.conversa').text(conversa);
-/*var idUser = window.localStorage.getItem("loggedIn");
-var idReceive = $('.idReceive').text();	 
-	 
-	 
-      var APP = new Firebase('https://lets-tags.firebaseio.com/mensagens/');  
-
-	  $('.send').on('click', function(){
-		 var msg = $$('#mensagem').val();
-    APP.push({mensagem: msg, sender: idUser, receive:  idReceive});
-
-    $$('#mensagem').val('');
-	});
-
-	  
-	 
-	  APP.on('child_added', function(snap) {
-  var novamensagem = snap.val(); //Nova mensagem recebida.
-  carregaMensagem(novamensagem.mensagem, novamensagem.sender, novamensagem.receive);
-});
-
-APP.on('child_changed', 
-   function (snap) {
-       var novamensagem = snap.val(); //Nova mensagem recebida.
-  carregaMensagem(novamensagem.mensagem, novamensagem.sender, novamensagem.receive);
-   })
-APP.on('child_removed', 
-   function (snap) {
-      var novamensagem = snap.val(); //Nova mensagem recebida.
-  carregaMensagem(novamensagem.mensagem, novamensagem.sender, novamensagem.receive);
-   })
-
-function carregaMensagem(mensagem, sender, receive) {
-	
-	if(sender == idUser){
-		if(idUser == sender && receive == idReceive || receive == idUser && sender == idReceive){
-		 $$('<div/>').html('<div class="message message-sent"><div class="message-text">' + mensagem + '</div></div>')
-		.appendTo($$('.messages'));
-
-		 $('.messages-content').bind('scroll', function() {
-
-        if($$(this).scrollTop() + $$(this).innerHeight() >= this.scrollHeight) {
-            $$('body').append("<p>Fim da div</p>");
-        }
-    });
-
-		}
-	}else{
-		if(idUser == sender && receive == idReceive || receive == idUser && sender == idReceive){
-		if(receive == idUser){
-		 $$('<div/>').html('<div class="message message-received"><div class="message-text">' + mensagem + '</div></div>')
-		.appendTo($$('.messages'));
-
-		 $('.messages-content').bind('scroll', function() {
-
-        if($$(this).scrollTop() + $(this).innerHeight() >= this.scrollHeight) {
-            $$('body').append("<p>Fim da div</p>");
-        }
-    });
-		
-		}else{
-			$$('.messages').html('');
-		}
-		}
-	}
-
- 
-};*/
 
 var conversationStarted = false;
 
@@ -603,7 +536,7 @@ APP.on('child_added', function(snap) {
 
 APP.on('child_changed', 
    function (snap) {
-       var novamensagem = snap.val(); //Nova mensagem recebida.
+    var novamensagem = snap.val(); //Nova mensagem recebida.
   carregaMensagem(novamensagem.mensagem, novamensagem.sender, novamensagem.receive);
    })
 APP.on('child_removed', function (snap) {
