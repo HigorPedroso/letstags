@@ -450,7 +450,7 @@ if(retorno.trim() != ""){
 		var item = "";
 	   $$.each(data,function(i, data){
 		
-	    item += ' <li class="item-content" onClick="perfil(' + data.id + ')"><div class="item-media"></div><div class="item-inner"><div class="item-title name' + data.id + '">' + data.empresa + '</div><div class="item-after"><span class="button active">Seguindo</span></div></div></li>';
+	    item += ' <li class="item-content" onClick="perfil(' + data.id + ')"><div class="item-media"></div><div class="item-inner"><div class="item-title nameEmpresa' + data.id + '">' + data.empresa + '</div><div class="item-after"><span class="button active">Seguindo</span></div></div></li>';
                 });
 	  $$(".seguindoempresa").html(item);
 }else{
@@ -492,7 +492,7 @@ login();
 		
 		
 	   $$.each(data,function(i, data){
-	    item += ' <li class="item-content" onClick="chat(' + data.idUser + ')"><div class="item-inner"><div class="item-title name nameConversa' + data.idUser + '">' + data.nome + '</div><div class="item-after"><span class="button active">Enviar</span></div></div><p style="display:none" class="tokencontato' + data.idUser + '">' + data.token + '</p></li>';
+	    item += ' <li class="item-content" onClick="chat(' + data.idUser + ')"><div class="item-inner"><div class="item-title nameConversa' + data.idUser + '">' + data.nome + '</div><div class="item-after"><span class="button active">Enviar</span></div></div><p style="display:none" class="tokencontato' + data.idUser + '">' + data.token + '</p></li>';
                 });
 	  $$(".contatos").html(item);
 		}else{
@@ -1126,19 +1126,18 @@ function perguntas(){
 	  var item = "";	  
 	 
 	  $$.each(data,function(i, data){
-		if(data.PerguntaVideo2 != ""){
-		$$('.player').text(data.empresa); 
-		$$('.linkcomprar').text(data.urlSite);
-		$$('.perfilempresa').text(data.empresa);
-		var codigoVideo = $$('.idvideo').text(); 
-		
-		
 		item += '<h3 class="tituloVideo">' + data.titulo + '</h3>';
-		item += '<h4>Responda a pesquisa e ganhe ' + data.pontos + ' pontos</h4>';  
+				item += '<h4>Responda a pesquisa e ganhe ' + data.pontos + ' pontos</h4>';  
 		item += '<p id="pontos" style="display:none">' + data.pontos + '</p>';  
 		item += '<p id="pontosTotal" style="display:none">' + data.pontosTotal + '</p>';  
 		item += '<p id="desconto" style="display:none">' + data.desconto + '</p>';  
 		item += '<p id="codigo" style="display:none">' + data.codigoVideo + '</p>';  
+		$$('.player').text(data.empresa); 
+		$$('.linkcomprar').text(data.urlSite);
+		$$('.perfilempresa').text(data.empresa);
+		var codigoVideo = $$('.idvideo').text(); 
+		if(data.PerguntaVideo2 != ""){
+		
 		item += '<div class="per1">';
 		item += '<h2>' + data.PerguntaVideo +'</h2>';
 		item += '<p id="idpesquisa" class="idpesquisa" style="display:none">' + data.idPesquisa + '</p>';  
@@ -1153,7 +1152,6 @@ function perguntas(){
 		}
 		item += '</div>';
 		}else{
-			item += '<h4>Responda as perguntas</h4>';  
 		item += '<div class="per1">';
 		item += '<h2>' + data.PerguntaVideo +'</h2>';
 		item += '<p><a onClick="resposta1Fin(1)" class="button  button-big resposta1">' + data.OpcaoUm + '</a></p>';
@@ -1360,6 +1358,7 @@ function verifica(codigo){
 function favoritar(){
 		var idUser = window.localStorage.getItem("loggedIn");
 		var titulo = $$('.tituloVideo').text(); 
+		
 		var codigo = $$('.idvideo').text(); 
 	
 		$$.ajax({
@@ -1564,7 +1563,8 @@ function voltar(){
 }
 
 function perfil(id){
-	var empresa = $$('.name' + id).text();
+	var empresa = $$('.nameEmpresa' + id).text();
+	alert(empresa);
 	$$('.perfilempresa').text(empresa);
 	mainView.router.loadPage('perfil.html');
 }
