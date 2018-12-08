@@ -156,8 +156,55 @@ function onLoad() {
         if (oldRegId !== data.registrationId) {
         // Save new registration ID
         localStorage.setItem('registrationId', data.registrationId);
+		
+		var idnotification = window.localStorage.getItem("registrationId");
+		var idUser = window.localStorage.getItem("loggedIn");
+		
+		if(idUser >= 1){
+		$$.ajax({
+		url : 'http://letstags.com.br/Aplicativo/registrartoken.php',
+		type : 'post',
+		data : {'token': idnotification, 'idUser': idUser},
+		dataType: 'html',
+		beforeSend: function(){
+			
+    },
+    timeout: 3000,    
+    success: function(retorno){
+		
+    },
+    error: function(erro){
+     
+    }       
+  });
+  }else{
+	
+  }
         // Post registrationId to your app server as the value has changed
-     }
+     }else{
+	 var idnotification = window.localStorage.getItem("registrationId");
+	 var idUser = window.localStorage.getItem("loggedIn");
+	 if(idUser >= 1){
+		$$.ajax({
+		url : 'http://letstags.com.br/Aplicativo/registrartoken.php',
+		type : 'post',
+		data : {'token': idnotification, 'idUser': idUser},
+		dataType: 'html',
+		beforeSend: function(){
+			
+    },
+    timeout: 3000,    
+    success: function(retorno){
+		
+    },
+    error: function(erro){
+     
+    }       
+  });
+  }else{
+	
+  }
+	 }
 
     var parentElement = document.getElementById('registration');
     var listeningElement = parentElement.querySelector('.waiting');
