@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.letstags" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>LetsTags</name>
+    <name>Let's Tags</name>
     <description>
-        A basic Framework7 template for PhoneGap.
+       Aplicativo Mobile para usuários adquirem informações de forma rápida e precisa.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="higor533@gmail.com" href="http://higorpedroso.com.br">
+       Higor Pedroso Arruda
     </author>
     <content src="index.html" />
     <access origin="*" />
