@@ -379,6 +379,7 @@ $$(document).on('pageInit', function (e) {
 	}
 	
 	if (page.name === 'player3') {
+		
 		codigo(video);
 		verificacurtida();
 		$$('.sociais').show();
@@ -1547,6 +1548,7 @@ function playerTwo(codigo){
 function playerTree(codigo){
 	var codigoVideo = $$('.codigoVideo' + codigo).text();
 	$$('.idvideo').text(codigoVideo);
+	alert(codigoVideo);
 	mainView.router.loadPage('player3.html');
 }
 
@@ -1564,7 +1566,6 @@ function voltar(){
 
 function perfil(id){
 	var empresa = $$('.nameEmpresa' + id).text();
-	alert(empresa);
 	$$('.perfilempresa').text(empresa);
 	mainView.router.loadPage('perfil.html');
 }
