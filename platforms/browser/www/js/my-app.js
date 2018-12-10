@@ -1548,7 +1548,6 @@ function playerTwo(codigo){
 function playerTree(codigo){
 	var codigoVideo = $$('.codigoVideo' + codigo).text();
 	$$('.idvideo').text(codigoVideo);
-	alert(codigoVideo);
 	mainView.router.loadPage('player3.html');
 }
 

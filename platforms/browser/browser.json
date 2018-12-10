@@ -42,6 +42,9 @@
         },
         "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.phonegap.letstags"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.phonegap.letstags"
         }
     },
     "dependent_plugins": {},
@@ -107,6 +110,20 @@
             "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
             "pluginId": "phonegap-plugin-barcodescanner",
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+            "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+            "pluginId": "cordova-plugin-splashscreen",
+            "runs": true
         }
     ],
     "plugin_metadata": {
@@ -117,6 +134,7 @@
         "phonegap-plugin-push": "1.8.4",
         "cordova-plugin-compat": "1.2.0",
         "cordova-plugin-barcodescanner": "0.7.4",
-        "phonegap-plugin-barcodescanner": "7.0.4"
+        "phonegap-plugin-barcodescanner": "7.0.4",
+        "cordova-plugin-splashscreen": "4.0.3"
     }
 }

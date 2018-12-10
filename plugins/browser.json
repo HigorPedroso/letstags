@@ -28,6 +28,9 @@
         },
         "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.phonegap.letstags"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.phonegap.letstags"
         }
     },
     "dependent_plugins": {
