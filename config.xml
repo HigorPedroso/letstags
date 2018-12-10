@@ -2,7 +2,7 @@
 <widget id="com.phonegap.letstags" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Let's Tags</name>
     <description>
-       Aplicativo Mobile para usuários adquirem informações de forma rápida e precisa.
+       Aplicativo Mobile para usuários adquirirem informações de forma rápida e precisa.
     </description>
     <author email="higor533@gmail.com" href="http://higorpedroso.com.br">
        Higor Pedroso Arruda
