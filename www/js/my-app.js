@@ -1678,7 +1678,7 @@ $$.ajax({
     },
     timeout: 3000,    
     success: function(retorno){
-		alert(retorno);
+		
     },
     error: function(erro){
      
