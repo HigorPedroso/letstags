@@ -54,5 +54,5 @@
 	<feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
 </feature>
-<gap:plugin name="cordova-plugin-x-socialsharing" source="npm" />
+<plugin name="cordova-plugin-x-socialsharing" source="npm" />
 </widget>
