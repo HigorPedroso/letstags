@@ -123,3 +123,21 @@ padding:0;
 .send{
 	line-height:0;
 }
+
+#foo{ 
+position: fixed; 
+height: 100%; 
+width: 100%; 
+top: 0; 
+left: 0; 
+background:#006400; 
+z-index:9999; 
+text-align:center;
+}
+
+.splash {
+position: relative;
+top: 40%;
+transform: translateY(-50%); 
+margin:auto;
+}

@@ -21,13 +21,6 @@
     <allow-intent href="geo:*" />
 	<preference name="orientation"  value="portrait"/>
 	<preference name="DisallowOverscroll" value="true" />
-	 <preference name="SplashScreen" value="screen"/>
-<preference name="AutoHideSplashScreen" value="true"/>
-<preference name="SplashShowOnlyFirstTime" value="false"/>
-<preference name="ShowSplashScreenSpinner" value="false"/>
-<preference name="FadeSplashScreen" value="false"/>
-<preference name="SplashScreenDelay" value="20000"/>
-<splash src="splash.png"/>
 	
     <platform name="android">
         <preference name="android-minSdkVersion" value="14" />
@@ -40,31 +33,6 @@
         <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
 		
-		 <splash src="res/screens/android/drawable-port-xhdpi-screen.png" />
-
-  <splash density="land-ldpi" src="res/screens/android/drawable-land-ldpi-screen.png" />
-
-  <splash density="land-mdpi" src="res/screens/android/drawable-land-mdpi-screen.png" />
-
-  <splash density="land-hdpi" src="res/screens/android/drawable-land-hdpi-screen.png" />
-
-  <splash density="land-xhdpi" src="res/screens/android/drawable-land-xhdpi-screen.png" />
-
-  <splash density="land-xxhdpi" src="res/screens/android/drawable-land-xxhdpi-screen.png" />
-
-  <splash density="land-xxxhdpi" src="res/screens/android/drawable-land-xxxhdpi-screen.png" />
-
-  <splash density="port-ldpi" src="res/screens/android/drawable-port-ldpi-screen.png" />
-
-  <splash density="port-mdpi" src="res/screens/android/drawable-port-mdpi-screen.png" />
-
-  <splash density="port-hdpi" src="res/screens/android/drawable-port-hdpi-screen.png" />
-
-  <splash density="port-xhdpi" src="res/screens/android/drawable-port-xhdpi-screen.png" />
-
-  <splash density="port-xxhdpi" src="res/screens/android/drawable-port-xxhdpi-screen.png" />
-
-  <splash density="port-xxxhdpi" src="res/screens/android/drawable-port-xxxhdpi-screen.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -72,7 +40,6 @@
         <preference name="BackupWebStorage" value="none" />
     </platform>
   
-  <plugin name="cordova-plugin-splashscreen" spec="4.0.3" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
 	<plugin name="cordova-plugin-whitelist" spec="~1.2.0" />

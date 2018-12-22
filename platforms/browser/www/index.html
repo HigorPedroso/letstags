@@ -40,6 +40,11 @@
 </head>
 
 <body onload="onLoad()">
+
+
+<div id="foo" class="foo">
+	<div class="splash"><h1 style="font-size:30px"><img style="width:30%; margin-top:60px" src="img/logo.gif"/></h1><p style="color:white">O jeito inteligente de se informar</div>
+</div>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
 
@@ -52,22 +57,22 @@
 	  <div class="logo-menu">
 							<img src="img/logo.gif"/>
 						</div>
-        <p><i class="fa fa-home" aria-hidden="true"></i> <a class="panel-close" href="index.html">Inicio</a></p>
-        <p><i class="fa fa-users" aria-hidden="true"></i> <a class="panel-open" href="seguindo.html">Seguindo</a></p>
-        <p><i class="fa fa-star" aria-hidden="true"></i> <a class="panel-open" href="favoritos.html">Favoritos</a></p>
-        <p><i class="fa fa-comments" aria-hidden="true"></i> <a class="panel-open" href="contatos.html">Chat</a></p>
-        <p><i class="fa fa-sign-in" aria-hidden="true"></i> <a class="panel-open loginmenu" href="login.html" data-panel="right">Login</a></p>
-        <p><i class="fa fa-user-plus" aria-hidden="true"></i> <a class="panel-open" href="cadastro.html" data-panel="right">Cadastre-se</a></p>
-        <p><i class="fa fa-diamond" aria-hidden="true"></i> <a class="panel-open" href="cupons.html" data-panel="right">Cupons</a></p>
-        <p><i class="fa fa-sign-out" aria-hidden="true"></i> <a class="panel-close" onClick="logout()">Sair</a></p>
+        <p><i class="fa fa-home" aria-hidden="true"></i> <a class="close-panel" href="index.html">Inicio</a></p>
+        <p><i class="fa fa-users" aria-hidden="true"></i> <a class="close-panel" href="seguindo.html">Seguindo</a></p>
+        <p><i class="fa fa-star" aria-hidden="true"></i> <a class="close-panel" href="favoritos.html">Favoritos</a></p>
+        <p><i class="fa fa-comments" aria-hidden="true"></i> <a class="close-panel" href="contatos.html">Chat</a></p>
+        <!--<p><i class="fa fa-sign-in" aria-hidden="true"></i> <a class="panel-open loginmenu" href="login.html" data-panel="right">Login</a></p>
+        <p><i class="fa fa-user-plus" aria-hidden="true"></i> <a class="panel-open" href="cadastro.html" data-panel="right">Cadastre-se</a></p>-->
+        <p><i class="fa fa-diamond" aria-hidden="true"></i> <a class="close-panel" onClick="opencupons()" data-panel="right">Cupons</a></p>
+        <p><i class="fa fa-sign-out" aria-hidden="true"></i> <a class="close-panel"  onClick="logout()">Sair</a></p>
 		<p style="display:none" class="idvideo" ></p>
 		<p style="display:none" class="verificacodigo" ></p>
       </div>
         </div>
     </div>
-
     <!-- Views -->
     <div class="views">
+	
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
@@ -88,6 +93,7 @@
             <div class="pages navbar-through toolbar-through">
                 <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
+				
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
@@ -228,7 +234,12 @@ function onLoad() {
              
 			 	 
       </script>
+	 <script>
+	 $('.container').show();
+setTimeout(function(){$('.foo').hide();}, 3000);
+	//$('#foo').fadeIn().slideUp(5000);
 	 
+	</script>
 </body>
 
 </html>

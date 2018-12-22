@@ -16,13 +16,20 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
-        
-document.addEventListener('backbutton', function (e) {
-  e.preventDefault();
-  return false;
-  
-});	
-    
+
+		
+		document.addEventListener("deviceready", function () {
+    /* Set Android Back Button  */
+    document.addEventListener("backbutton", function(){
+        //mainView.router.back();
+		
+		myApp.onPageInit('comprar', function (page) {
+     mainView.router.back();
+		$$('.sociais').show();
+		$$('.fav').hide();
+})
+    }, false);
+});
 
 // Now we need to run the code that will be executed only for About page.
 
@@ -66,6 +73,12 @@ myApp.onPageInit('login-screen', function (page) {
     }       
             });
     });
+	document.addEventListener("backbutton", onBackKeyDown, false);
+		function onBackKeyDown() {
+      mainView.router.loadPage('login.html');
+}
+
+	
   });
 
 
@@ -90,11 +103,14 @@ SocialShare("http://letstags.com.br/video.php?action=" + code);
 	
 		var verificando = $$('.verificacodigo').text();
 		
+		
 if (verificando.indexOf('-') >= 1 && verificando.indexOf('&') >= 1)
 {
   var codigo = $$('.idvideo').text();
+}else if(code.length == 11){
+	  var codigo = $$('.idvideo').text();
 }else{
-	 var codigo = "erro";
+	var codigo = "erro";
 }
 
 		if(codigo != "erro"){	
@@ -154,6 +170,8 @@ $$(document).on('pageInit', function (e) {
 		$$('.sociais').hide();
 	$$('.fav').show();
 	});
+	
+	
     }
 	
 	if (page.name === 'index') {
@@ -161,6 +179,7 @@ $$(document).on('pageInit', function (e) {
         //$$('.player').text('Inicio');
 		//$$('.sociais').hide();
 		//$$('.fav').show();
+		
     }
 	
 	if (page.name === 'comprar') {
@@ -178,6 +197,8 @@ $$(document).on('pageInit', function (e) {
 		$$('.sociais').show();
 		$$('.fav').hide();
 	});
+	
+
     }
 	
 	if(page.name === 'vauncher'){
@@ -214,7 +235,7 @@ $$(document).on('pageInit', function (e) {
 		});
 	}
 	
-	if (page.name === 'cupons') {
+	if (page.name === 'cupons' || page.name === 'cupons2') {
 		
 		$$('.sociais').hide();
 		$$('.fav').hide();	
@@ -1685,5 +1706,10 @@ $$.ajax({
     }       
   });
   
+}
+
+function opencupons(){
+	
+	mainView.router.loadPage('cupons2.html');
 }
 		
