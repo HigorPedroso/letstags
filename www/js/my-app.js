@@ -44,7 +44,7 @@ myApp.onPageInit('login-screen', function (page) {
       //
 	  var token = window.localStorage.getItem("registrationId");
 	  $$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/login.php',
+    url : 'https://letstags.com.br/Aplicativo/login.php',
     type : 'post',
     data : {'email': username, 'senha': password, 'token': token},
     dataType: 'html',
@@ -98,7 +98,7 @@ function codigo(video) {
 
 var code = $$('.idvideo').text();
 
-SocialShare("http://letstags.com.br/video.php?action=" + code);
+SocialShare("https://letstags.com.br/video.php?action=" + code);
  //Chamando meu método
 	
 		var verificando = $$('.verificacodigo').text();
@@ -115,7 +115,7 @@ if (verificando.indexOf('-') >= 1 && verificando.indexOf('&') >= 1)
 
 		if(codigo != "erro"){	
 		$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/loginweb.php',
+		url : 'https://letstags.com.br/Aplicativo/loginweb.php',
 		type : 'post',
 		dataType: 'html',
 		beforeSend: function(){
@@ -207,7 +207,7 @@ $$(document).on('pageInit', function (e) {
 		var empresa = $$('.idCupom').text();  
 		
 		$$.ajax({
-			url : 'http://letstags.com.br/Aplicativo/vauncher.php',
+			url : 'https://letstags.com.br/Aplicativo/vauncher.php',
 			type : 'post',
 			data : {'idUser': idUser, 'empresa': empresa},
 			dataType: 'html',
@@ -251,7 +251,7 @@ $$(document).on('pageInit', function (e) {
        		var idUser = window.localStorage.getItem("loggedIn");
 	
 		$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/receberCupons.php',
+		url : 'https://letstags.com.br/Aplicativo/receberCupons.php',
 		type : 'post',
 		data : {'idUser': idUser},
 		dataType: 'html',
@@ -301,7 +301,7 @@ $$(document).on('pageInit', function (e) {
 		$$('.empresanome').text(empresa);
 	
 		$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/seguidores.php',
+		url : 'https://letstags.com.br/Aplicativo/seguidores.php',
 		type : 'post',
 		data : {'empresa': empresa},
 		dataType: 'html',
@@ -331,7 +331,7 @@ $$(document).on('pageInit', function (e) {
   });
   
   $$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/videos.php',
+		url : 'https://letstags.com.br/Aplicativo/videos.php',
 		type : 'post',
 		data : {'empresa': empresa},
 		dataType: 'html',
@@ -363,7 +363,7 @@ $$(document).on('pageInit', function (e) {
 	var empresa = $$('.empresanome').text();
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/verificaseguir.php',
+		url : 'https://letstags.com.br/Aplicativo/verificaseguir.php',
 		type : 'post',
 		data : {'idUser': idUser, 'empresa': empresa},
 		dataType: 'html',
@@ -415,7 +415,7 @@ $$(document).on('pageInit', function (e) {
 					var idUser = window.localStorage.getItem("loggedIn");
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/receberFavoritos.php',
+		url : 'https://letstags.com.br/Aplicativo/receberFavoritos.php',
 		type : 'post',
 		data : {'idUser': idUser},
 		dataType: 'html',
@@ -458,7 +458,7 @@ login();
 			var idUser = window.localStorage.getItem("loggedIn");
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/receberSeguindo.php',
+		url : 'https://letstags.com.br/Aplicativo/receberSeguindo.php',
 		type : 'post',
 		data : {'idUser': idUser},
 		dataType: 'html',
@@ -499,7 +499,7 @@ login();
 					var idUser = window.localStorage.getItem("loggedIn");
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/receberContato.php',
+		url : 'https://letstags.com.br/Aplicativo/receberContato.php',
 		type : 'post',
 		data : {'idUser': idUser},
 		dataType: 'html',
@@ -709,7 +709,7 @@ function resposta1(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta': resposta},
     dataType: 'html',
@@ -735,7 +735,7 @@ function resposta2(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta2': resposta},
     dataType: 'html',
@@ -761,7 +761,7 @@ function resposta3(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta3': resposta},
     dataType: 'html',
@@ -787,7 +787,7 @@ function resposta4(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta4': resposta},
     dataType: 'html',
@@ -813,7 +813,7 @@ function resposta5(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta5': resposta},
     dataType: 'html',
@@ -839,7 +839,7 @@ function resposta6(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta6': resposta},
     dataType: 'html',
@@ -864,7 +864,7 @@ function resposta7(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta7': resposta},
     dataType: 'html',
@@ -897,7 +897,7 @@ function resposta1Fin(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta': resposta},
     dataType: 'html',
@@ -930,7 +930,7 @@ function resposta2Fin(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta2': resposta},
     dataType: 'html',
@@ -965,7 +965,7 @@ function resposta3Fin(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta3': resposta},
     dataType: 'html',
@@ -998,7 +998,7 @@ function resposta4Fin(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta4': resposta},
     dataType: 'html',
@@ -1031,7 +1031,7 @@ function resposta5Fin(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta5': resposta},
     dataType: 'html',
@@ -1064,7 +1064,7 @@ function resposta6Fin(id){
 	var idPesquisa = $$('.idpesquisa').text();
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/respostas.php',
+    url : 'https://letstags.com.br/Aplicativo/respostas.php',
     type : 'post',
 	data : {'idUser': idUser, 'idPesquisa' : idPesquisa, 'resposta6': resposta},
     dataType: 'html',
@@ -1096,7 +1096,7 @@ function pontos(){
 	var idUser = window.localStorage.getItem("loggedIn");
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/pontos.php',
+    url : 'https://letstags.com.br/Aplicativo/pontos.php',
     type : 'post',
 	data : {'idUser': idUser, 'pontos': pontos, 'empresa': empresa, 'codigo': codigo, 'pontosTotal': pontosTotal, 'desconto': desconto},
     dataType: 'html',
@@ -1132,7 +1132,7 @@ function perguntas(){
 	var codigo = $$('.idvideo').text(); 
 	
 	$$.ajax({
-    url : 'http://letstags.com.br/Aplicativo/pesquisa.php',
+    url : 'https://letstags.com.br/Aplicativo/pesquisa.php',
     type : 'post',
     data : {'codigoVideo': codigo},
     dataType: 'html',
@@ -1350,7 +1350,7 @@ function verifica(codigo){
 	var idUser = window.localStorage.getItem("loggedIn");
 	
 		$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/verifica.php',
+		url : 'https://letstags.com.br/Aplicativo/verifica.php',
 		type : 'post',
 		data : {'idUser': idUser, 'codigoVideo': codigo},
 		dataType: 'html',
@@ -1384,7 +1384,7 @@ function favoritar(){
 		var codigo = $$('.idvideo').text(); 
 	
 		$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/favoritos.php',
+		url : 'https://letstags.com.br/Aplicativo/favoritos.php',
 		type : 'post',
 		data : {'id': idUser, 'titulo': titulo, 'codigo': codigo},
 		dataType: 'html',
@@ -1419,7 +1419,7 @@ function gerarCupom(idPonto){
 		$$('.idCupom').text(empresa);
 	
 		$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/vauncher.php',
+		url : 'https://letstags.com.br/Aplicativo/vauncher.php',
 		type : 'post',
 		data : {'idUser': idUser, 'empresa': empresa, 'pontos': pontos, 'pontosTotal': pontosTotal, 'porcentagem': porcentagem},
 		dataType: 'html',
@@ -1442,7 +1442,7 @@ function seguir(){
 	var empresa = $$('.empresanome').text();
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/seguir.php',
+		url : 'https://letstags.com.br/Aplicativo/seguir.php',
 		type : 'post',
 		data : {'idUser': idUser, 'empresa': empresa},
 		dataType: 'html',
@@ -1476,7 +1476,7 @@ function curtir(){
 	var codigo = $$('.idvideo').text(); 
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/curtir.php',
+		url : 'https://letstags.com.br/Aplicativo/curtir.php',
 		type : 'post',
 		data : {'idUser': idUser, 'codigo': codigo},
 		dataType: 'html',
@@ -1505,7 +1505,7 @@ function verificacurtida(){
 	var codigo = $$('.idvideo').text(); 
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/verificacurtir.php',
+		url : 'https://letstags.com.br/Aplicativo/verificacurtir.php',
 		type : 'post',
 		data : {'idUser': idUser, 'codigo': codigo},
 		dataType: 'html',
@@ -1533,7 +1533,7 @@ function removerFavorito(id){
 	var codigo = $$('.codigoVideo' + id).text();
 	
 	$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/removerFavorito.php',
+		url : 'https://letstags.com.br/Aplicativo/removerFavorito.php',
 		type : 'post',
 		data : {'idUser': idUser, 'codigo': codigo, 'id': id},
 		dataType: 'html',
@@ -1653,7 +1653,7 @@ function cadastrar(){
 	
 	if(ok == "ok"){
 		$$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/cadastro.php',
+		url : 'https://letstags.com.br/Aplicativo/cadastro.php',
 		type : 'post',
 		data : {'nome': nome, 'email': email, 'senha': senha},
 		dataType: 'html',
@@ -1690,7 +1690,7 @@ function chat(id){
 function sendNotification(message, token, idUser) {
 
 $$.ajax({
-		url : 'http://letstags.com.br/Aplicativo/push.php',
+		url : 'https://letstags.com.br/Aplicativo/push.php',
 		type : 'post',
 		data : {'token': token, 'message': message, 'idUser': idUser},
 		dataType: 'html',
